@@ -10,8 +10,16 @@ import githubUsernameRegex from 'github-username-regex'
 
 dotenv.config()
 
-const GRAPHQL_REPOS_FIELD = `
-  repositories(first: 100, ownerAffiliations: OWNER, orderBy: {direction: DESC, field: STARGAZERS}, after: $after) {
+const GRAPHQL_REPOS_FIELD = `  repositories(
+    first: 100,
+    affiliations: [
+      OWNER,
+      COLLABORATOR,
+      ORGANIZATION_MEMBER
+    ],
+    orderBy: {direction: DESC, field: STARGAZERS},
+    after: $after
+  ) {
     totalCount
     nodes {
       name
@@ -21,8 +29,7 @@ const GRAPHQL_REPOS_FIELD = `
       hasNextPage
       endCursor
     }
-  }
-`
+  }`
 
 const GRAPHQL_REPOS_QUERY = `
   query userInfo($login: String!, $after: String) {
@@ -144,11 +151,7 @@ const statsFetcher = async ({
     }
 
     // Disable multi page fetching on public Vercel instance due to rate limits.
-    const repoNodesWithStars = repoNodes.filter((node: { stargazerCount: number }) => node.stargazerCount !== 0)
-    hasNextPage =
-      process.env.FETCH_MULTI_PAGE_STARS === 'true' &&
-      repoNodes.length === repoNodesWithStars.length &&
-      res.data.data.user.repositories.pageInfo.hasNextPage
+    hasNextPage = process.env.FETCH_MULTI_PAGE_STARS === 'true' && res.data.data.user.repositories.pageInfo.hasNextPage
     endCursor = res.data.data.user.repositories.pageInfo.endCursor
   }
 
