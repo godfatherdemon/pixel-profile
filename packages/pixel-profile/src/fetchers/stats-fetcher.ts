@@ -15,9 +15,7 @@ const GRAPHQL_REPOS_FIELD = `
     totalCount
     nodes {
       name
-      stargazers {
-        totalCount
-      }
+      stargazerCount
     }
     pageInfo {
       hasNextPage
@@ -146,9 +144,7 @@ const statsFetcher = async ({
     }
 
     // Disable multi page fetching on public Vercel instance due to rate limits.
-    const repoNodesWithStars = repoNodes.filter(
-      (node: { stargazers: { totalCount: number } }) => node.stargazers.totalCount !== 0
-    )
+    const repoNodesWithStars = repoNodes.filter((node: { stargazerCount: number }) => node.stargazerCount !== 0)
     hasNextPage =
       process.env.FETCH_MULTI_PAGE_STARS === 'true' &&
       repoNodes.length === repoNodesWithStars.length &&
@@ -304,8 +300,8 @@ export async function fetchStats(
     .filter((data: { name: string }) => {
       return !repoToHide.has(data.name)
     })
-    .reduce((prev: number, curr: { stargazers: { totalCount: number } }) => {
-      return prev + curr.stargazers.totalCount
+    .reduce((prev: number, curr: { stargazerCount: number }) => {
+      return prev + curr.stargazerCount
     }, 0)
 
   stats.rank = rank({
