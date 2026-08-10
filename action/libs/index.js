@@ -108126,7 +108126,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
       }
       v.version = '17.0.2'
     })
-    var pQ = GA((N) => {
+    var pQ = GA((T) => {
       'use strict'
       process.env.NODE_ENV !== 'production' &&
         (function () {
@@ -108135,18 +108135,18 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             B = '17.0.2',
             Q = 60103,
             e = 60106
-          ;(N.Fragment = 60107), (N.StrictMode = 60108), (N.Profiler = 60114)
+          ;(T.Fragment = 60107), (T.StrictMode = 60108), (T.Profiler = 60114)
           var g = 60109,
             M = 60110,
             n = 60112
-          N.Suspense = 60113
+          T.Suspense = 60113
           var t = 60120,
             C = 60115,
             s = 60116,
             F = 60121,
-            U = 60122,
+            D = 60122,
             I = 60117,
-            P = 60119,
+            N = 60119,
             z = 60128,
             V = 60129,
             L = 60130,
@@ -108155,35 +108155,35 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             var a = Symbol.for
             ;(Q = a('react.element')),
               (e = a('react.portal')),
-              (N.Fragment = a('react.fragment')),
-              (N.StrictMode = a('react.strict_mode')),
-              (N.Profiler = a('react.profiler')),
+              (T.Fragment = a('react.fragment')),
+              (T.StrictMode = a('react.strict_mode')),
+              (T.Profiler = a('react.profiler')),
               (g = a('react.provider')),
               (M = a('react.context')),
               (n = a('react.forward_ref')),
-              (N.Suspense = a('react.suspense')),
+              (T.Suspense = a('react.suspense')),
               (t = a('react.suspense_list')),
               (C = a('react.memo')),
               (s = a('react.lazy')),
               (F = a('react.block')),
-              (U = a('react.server.block')),
+              (D = a('react.server.block')),
               (I = a('react.fundamental')),
-              (P = a('react.scope')),
+              (N = a('react.scope')),
               (z = a('react.opaque.id')),
               (V = a('react.debug_trace_mode')),
               (L = a('react.offscreen')),
               (K = a('react.legacy_hidden'))
           }
-          var D = typeof Symbol == 'function' && Symbol.iterator,
+          var U = typeof Symbol == 'function' && Symbol.iterator,
             l = '@@iterator'
           function i(A) {
             if (A === null || typeof A != 'object') return null
-            var r = (D && A[D]) || A[l]
+            var r = (U && A[U]) || A[l]
             return typeof r == 'function' ? r : null
           }
           var k = { current: null },
             J = { transition: 0 },
-            T = { current: null },
+            P = { current: null },
             S = {},
             Z = null
           function CA(A) {
@@ -108203,7 +108203,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             BA = {
               ReactCurrentDispatcher: k,
               ReactCurrentBatchConfig: J,
-              ReactCurrentOwner: T,
+              ReactCurrentOwner: P,
               IsSomeRendererActing: XA,
               assign: E
             }
@@ -108328,15 +108328,15 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               return A.displayName || A.name || null
             if (typeof A == 'string') return A
             switch (A) {
-              case N.Fragment:
+              case T.Fragment:
                 return 'Fragment'
               case e:
                 return 'Portal'
-              case N.Profiler:
+              case T.Profiler:
                 return 'Profiler'
-              case N.StrictMode:
+              case T.StrictMode:
                 return 'StrictMode'
-              case N.Suspense:
+              case T.Suspense:
                 return 'Suspense'
               case t:
                 return 'SuspenseList'
@@ -108411,8 +108411,8 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
             ;(w.isReactWarning = !0), Object.defineProperty(A, 'ref', { get: w, configurable: !0 })
           }
           function WE(A) {
-            if (typeof A.ref == 'string' && T.current && A.__self && T.current.stateNode !== A.__self) {
-              var r = oA(T.current.type)
+            if (typeof A.ref == 'string' && P.current && A.__self && P.current.stateNode !== A.__self) {
+              var r = oA(P.current.type)
               fE[r] ||
                 (p(
                   'Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref',
@@ -108466,7 +108466,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               var RA = typeof A == 'function' ? A.displayName || A.name || 'Unknown' : A
               H && XE(X, RA), u && hA(X, RA)
             }
-            return iA(A, H, u, x, O, T.current, X)
+            return iA(A, H, u, x, O, P.current, X)
           }
           function qE(A, r) {
             var w = iA(A.type, r, A.ref, A._self, A._source, A._owner, A.props)
@@ -108483,7 +108483,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
               O = A._source,
               q = A._owner
             if (r != null) {
-              pA(r) && ((u = r.ref), (q = T.current)), rE(r) && (H = '' + r.key)
+              pA(r) && ((u = r.ref), (q = P.current)), rE(r) && (H = '' + r.key)
               var EA
               A.type && A.type.defaultProps && (EA = A.type.defaultProps)
               for (R in r)
@@ -108826,11 +108826,11 @@ Your code should look like:
             return !!(
               typeof A == 'string' ||
               typeof A == 'function' ||
-              A === N.Fragment ||
-              A === N.Profiler ||
+              A === T.Fragment ||
+              A === T.Profiler ||
               A === V ||
-              A === N.StrictMode ||
-              A === N.Suspense ||
+              A === T.StrictMode ||
+              A === T.Suspense ||
               A === t ||
               A === K ||
               HE ||
@@ -108843,7 +108843,7 @@ Your code should look like:
                   A.$$typeof === n ||
                   A.$$typeof === I ||
                   A.$$typeof === F ||
-                  A[0] === U))
+                  A[0] === D))
             )
           }
           function fB(A, r) {
@@ -109109,7 +109109,7 @@ Did you call array.map(useContext)? Calling Hooks inside a loop is not supported
             if (typeof A == 'function') return hB(A, Ef(A))
             if (typeof A == 'string') return TE(A)
             switch (A) {
-              case N.Suspense:
+              case T.Suspense:
                 return TE('Suspense')
               case t:
                 return TE('SuspenseList')
@@ -109193,8 +109193,8 @@ Did you call array.map(useContext)? Calling Hooks inside a loop is not supported
           var tB
           tB = !1
           function YB() {
-            if (T.current) {
-              var A = oA(T.current.type)
+            if (P.current) {
+              var A = oA(P.current.type)
               if (A)
                 return (
                   `
@@ -109249,7 +109249,7 @@ Check the top-level render call using <` +
                 var R = ''
                 A &&
                   A._owner &&
-                  A._owner !== T.current &&
+                  A._owner !== P.current &&
                   (R = ' It was passed a child from ' + oA(A._owner.type) + '.'),
                   YA(A),
                   p(
@@ -109346,7 +109346,7 @@ Check the top-level render call using <` +
             var x = eE.apply(this, arguments)
             if (x == null) return x
             if (R) for (var O = 2; O < arguments.length; O++) yB(arguments[O], A)
-            return A === N.Fragment ? ef(x) : OB(x), x
+            return A === T.Fragment ? ef(x) : OB(x), x
           }
           var qB = !1
           function gf(A) {
@@ -109382,30 +109382,30 @@ Check the top-level render call using <` +
             wf = Mf,
             nf = gf,
             Rf = { map: uA, forEach: zA, count: xE, toArray: ME, only: tE }
-          ;(N.Children = Rf),
-            (N.Component = _),
-            (N.PureComponent = _A),
-            (N.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = BA),
-            (N.cloneElement = wf),
-            (N.createContext = SE),
-            (N.createElement = tf),
-            (N.createFactory = nf),
-            (N.createRef = AE),
-            (N.forwardRef = QB),
-            (N.isValidElement = lA),
-            (N.lazy = BB),
-            (N.memo = fB),
-            (N.useCallback = Y),
-            (N.useContext = rB),
-            (N.useDebugValue = MA),
-            (N.useEffect = d),
-            (N.useImperativeHandle = G),
-            (N.useLayoutEffect = m),
-            (N.useMemo = j),
-            (N.useReducer = o),
-            (N.useRef = c),
-            (N.useState = f),
-            (N.version = B)
+          ;(T.Children = Rf),
+            (T.Component = _),
+            (T.PureComponent = _A),
+            (T.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = BA),
+            (T.cloneElement = wf),
+            (T.createContext = SE),
+            (T.createElement = tf),
+            (T.createFactory = nf),
+            (T.createRef = AE),
+            (T.forwardRef = QB),
+            (T.isValidElement = lA),
+            (T.lazy = BB),
+            (T.memo = fB),
+            (T.useCallback = Y),
+            (T.useContext = rB),
+            (T.useDebugValue = MA),
+            (T.useEffect = d),
+            (T.useImperativeHandle = G),
+            (T.useLayoutEffect = m),
+            (T.useMemo = j),
+            (T.useReducer = o),
+            (T.useRef = c),
+            (T.useState = f),
+            (T.version = B)
         })()
     })
     var HB = GA((be, zB) => {
@@ -109455,15 +109455,15 @@ Check the top-level render call using <` +
             C = 60112,
             s = 60113,
             F = 60120,
-            U = 60115,
+            D = 60115,
             I = 60116,
-            P = 60121,
+            N = 60121,
             z = 60122,
             V = 60117,
             L = 60119,
             K = 60128,
             a = 60129,
-            D = 60130,
+            U = 60130,
             l = 60131
           if (typeof Symbol == 'function' && Symbol.for) {
             var i = Symbol.for
@@ -109477,20 +109477,20 @@ Check the top-level render call using <` +
               (C = i('react.forward_ref')),
               (s = i('react.suspense')),
               (F = i('react.suspense_list')),
-              (U = i('react.memo')),
+              (D = i('react.memo')),
               (I = i('react.lazy')),
-              (P = i('react.block')),
+              (N = i('react.block')),
               (z = i('react.server.block')),
               (V = i('react.fundamental')),
               (L = i('react.scope')),
               (K = i('react.opaque.id')),
               (a = i('react.debug_trace_mode')),
-              (D = i('react.offscreen')),
+              (U = i('react.offscreen')),
               (l = i('react.legacy_hidden'))
           }
           var k = typeof Symbol == 'function' && Symbol.iterator,
             J = '@@iterator'
-          function T(f) {
+          function P(f) {
             if (f === null || typeof f != 'object') return null
             var o = (k && f[k]) || f[J]
             return typeof o == 'function' ? o : null
@@ -109530,12 +109530,12 @@ Check the top-level render call using <` +
               (typeof f == 'object' &&
                 f !== null &&
                 (f.$$typeof === I ||
-                  f.$$typeof === U ||
+                  f.$$typeof === D ||
                   f.$$typeof === n ||
                   f.$$typeof === t ||
                   f.$$typeof === C ||
                   f.$$typeof === V ||
-                  f.$$typeof === P ||
+                  f.$$typeof === N ||
                   f[0] === z))
             )
           }
@@ -109581,9 +109581,9 @@ Check the top-level render call using <` +
                   return p(c._context) + '.Provider'
                 case C:
                   return QA(f, f.render, 'ForwardRef')
-                case U:
+                case D:
                   return W(f.type)
-                case P:
+                case N:
                   return W(f._render)
                 case I: {
                   var d = f,
@@ -109776,9 +109776,9 @@ Check the top-level render call using <` +
               switch (f.$$typeof) {
                 case C:
                   return QE(f.render)
-                case U:
+                case D:
                   return pA(f.type, o, c)
-                case P:
+                case N:
                   return QE(f._render)
                 case I: {
                   var d = f,
@@ -110028,7 +110028,7 @@ Check the top-level render call using <` +
                 }
               else if (tE(f)) f._store && (f._store.validated = !0)
               else if (f) {
-                var m = T(f)
+                var m = P(f)
                 if (typeof m == 'function' && m !== f.entries)
                   for (var Y = m.call(f), j; !(j = Y.next()).done; ) tE(j.value) && uE(j.value, o)
               }
@@ -110040,7 +110040,7 @@ Check the top-level render call using <` +
               if (o == null || typeof o == 'string') return
               var c
               if (typeof o == 'function') c = o.propTypes
-              else if (typeof o == 'object' && (o.$$typeof === C || o.$$typeof === U)) c = o.propTypes
+              else if (typeof o == 'object' && (o.$$typeof === C || o.$$typeof === D)) c = o.propTypes
               else return
               if (c) {
                 var d = W(o)
@@ -110237,10 +110237,10 @@ Check the top-level render call using <` +
         { pixels: C } = await VA(t),
         s = Buffer.alloc(E.length)
       for (let F = 0; F < s.length - 1; F += 4) {
-        let U = C[F + 3] / 255
-        ;(s[F] = E[F] * (1 - U) + C[F] * U),
-          (s[F + 1] = E[F + 1] * (1 - U) + C[F + 1] * U),
-          (s[F + 2] = E[F + 2] * (1 - U) + C[F + 2] * U),
+        let D = C[F + 3] / 255
+        ;(s[F] = E[F] * (1 - D) + C[F] * D),
+          (s[F + 1] = E[F + 1] * (1 - D) + C[F + 1] * D),
+          (s[F + 2] = E[F + 2] * (1 - D) + C[F + 2] * D),
           (s[F + 3] = 255)
       }
       return s
@@ -110288,18 +110288,18 @@ Check the top-level render call using <` +
         C = 2,
         s = 50,
         F = 3,
-        U = 25,
+        D = 25,
         I = 1,
-        P = 2,
+        N = 2,
         z = 1,
         V = 50,
         L = 4,
         K = 10,
         a = 1,
-        D = C + F + I + z + L + a,
+        U = C + F + I + z + L + a,
         l = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100],
         i = ['S', 'A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C'],
-        k = (C * JE(B / t) + F * JE(Q / s) + I * JE(e / U) + z * JE(g / P) + L * tQ(M / V) + a * tQ(n / K)) / D,
+        k = (C * JE(B / t) + F * JE(Q / s) + I * JE(e / D) + z * JE(g / N) + L * tQ(M / V) + a * tQ(n / K)) / U,
         J = 1 - k
       return {
         level: i[l.findIndex((S) => J * 100 <= S)],
@@ -110327,8 +110327,16 @@ Check the top-level render call using <` +
         }
       }
     main.config()
-    var RQ = `
-  repositories(first: 100, ownerAffiliations: OWNER, orderBy: {direction: DESC, field: STARGAZERS}, after: $after) {
+    var RQ = `  repositories(
+    first: 100,
+    affiliations: [
+      OWNER,
+      COLLABORATOR,
+      ORGANIZATION_MEMBER
+    ],
+    orderBy: {direction: DESC, field: STARGAZERS},
+    after: $after
+  ) {
     totalCount
     nodes {
       name
@@ -110338,8 +110346,7 @@ Check the top-level render call using <` +
       hasNextPage
       endCursor
     }
-  }
-`,
+  }`,
       Hf = `
   query userInfo($login: String!, $after: String) {
     user(login: $login) {
@@ -110413,13 +110420,9 @@ Check the top-level render call using <` +
             },
             F
           if ((E ? (F = await wQ(s, E)) : (F = await JA(wQ, s)), F.data.errors)) return F
-          let U = F.data.data.user.repositories.nodes
-          n ? n.data.data.user.repositories.nodes.push(...U) : (n = F)
-          let I = U.filter((P) => P.stargazerCount !== 0)
-          ;(t =
-            process.env.FETCH_MULTI_PAGE_STARS === 'true' &&
-            U.length === I.length &&
-            F.data.data.user.repositories.pageInfo.hasNextPage),
+          let D = F.data.data.user.repositories.nodes
+          n ? n.data.data.user.repositories.nodes.push(...D) : (n = F),
+            (t = process.env.FETCH_MULTI_PAGE_STARS === 'true' && F.data.data.user.repositories.pageInfo.hasNextPage),
             (C = F.data.data.user.repositories.pageInfo.endCursor)
         }
         return n
@@ -110501,7 +110504,7 @@ Check the top-level render call using <` +
         (t.contributedTo = s.repositoriesContributedTo.totalCount)
       let F = new Set(Q)
       return (
-        (t.totalStars = s.repositories.nodes.filter((U) => !F.has(U.name)).reduce((U, I) => U + I.stargazerCount, 0)),
+        (t.totalStars = s.repositories.nodes.filter((D) => !F.has(D.name)).reduce((D, I) => D + I.stargazerCount, 0)),
         (t.rank = FB({
           all_commits: B,
           commits: t.totalCommits,
@@ -110528,31 +110531,31 @@ Check the top-level render call using <` +
     function CQ(E, B, Q) {
       let e = B - 1,
         g = Q - 1
-      function M(t, C, s, F, U, I) {
-        let P = t * (1 - U) + C * U,
-          z = s * (1 - U) + F * U
-        return P * (1 - I) + z * I
+      function M(t, C, s, F, D, I) {
+        let N = t * (1 - D) + C * D,
+          z = s * (1 - D) + F * D
+        return N * (1 - I) + z * I
       }
       function n(t) {
         let C = t[0],
           s = t[1],
           F = Math.floor(C),
-          U = Math.floor(s),
+          D = Math.floor(s),
           I = tA(F, 0, e),
-          P = tA(F + 1, 0, e),
-          z = tA(U, 0, g),
-          V = tA(U + 1, 0, g),
+          N = tA(F + 1, 0, e),
+          z = tA(D, 0, g),
+          V = tA(D + 1, 0, g),
           L = C - I,
           K = s - z,
           a = kA(E, I, z, B),
-          D = kA(E, I, V, B),
-          l = kA(E, P, z, B),
-          i = kA(E, P, V, B),
-          k = M(a[0], l[0], D[0], i[0], L, K),
-          J = M(a[1], l[1], D[1], i[1], L, K),
-          T = M(a[2], l[2], D[2], i[2], L, K),
-          S = M(a[3], l[3], D[3], i[3], L, K)
-        return [k, J, T, S]
+          U = kA(E, I, V, B),
+          l = kA(E, N, z, B),
+          i = kA(E, N, V, B),
+          k = M(a[0], l[0], U[0], i[0], L, K),
+          J = M(a[1], l[1], U[1], i[1], L, K),
+          P = M(a[2], l[2], U[2], i[2], L, K),
+          S = M(a[3], l[3], U[3], i[3], L, K)
+        return [k, J, P, S]
       }
       return n
     }
@@ -110572,14 +110575,14 @@ Check the top-level render call using <` +
         t = B - 1,
         C = Q - 1,
         s = sQ[M](E, B, Q)
-      function F(U) {
-        return (U[0] = tA(U[0], 0, t)), (U[1] = tA(U[1], 0, C)), s(U)
+      function F(D) {
+        return (D[0] = tA(D[0], 0, t)), (D[1] = tA(D[1], 0, C)), s(D)
       }
-      for (let U = 0; U < Q; U++)
+      for (let D = 0; D < Q; D++)
         for (let I = 0; I < B; I++) {
-          let P = e([I, U], F),
-            z = HA(I, U, B) * 4
-          ;(n[z] = P[0]), (n[z + 1] = P[1]), (n[z + 2] = P[2]), (n[z + 3] = P[3])
+          let N = e([I, D], F),
+            z = HA(I, D, B) * 4
+          ;(n[z] = N[0]), (n[z + 1] = N[1]), (n[z + 2] = N[2]), (n[z + 3] = N[3])
         }
       return n
     }
@@ -110592,11 +110595,11 @@ Check the top-level render call using <` +
         (t, C) => {
           let s = B - 1,
             F = Q - 1,
-            U = t[0],
+            D = t[0],
             I = t[1],
-            P = n * B,
+            N = n * B,
             z = C(t),
-            V = +(U < P) + +(I < P) + +(U > s - P) + +(I > F - P)
+            V = +(D < N) + +(I < N) + +(D > s - N) + +(I > F - N)
           return V !== 0 && (g && (z[3] = 128), V === 2 && M && (z[3] = 0)), z
         },
         { textureFilter: SA.NEAREST }
@@ -110631,24 +110634,24 @@ Check the top-level render call using <` +
             AA = [rA[0] * _[0], rA[1] * _[1]]
           return RE(AA, [0.5, 0.5])
         }
-        let U = F(s),
+        let D = F(s),
           I = g.borderSize
-        if (!(U[0] >= I && U[0] <= 1 - I && U[1] >= I && U[1] <= 1 - I)) return [0, 0, 0, 255]
-        let z = [(U[0] - I) / (1 - 2 * I), (U[1] - I) / (1 - 2 * I)],
+        if (!(D[0] >= I && D[0] <= 1 - I && D[1] >= I && D[1] <= 1 - I)) return [0, 0, 0, 255]
+        let z = [(D[0] - I) / (1 - 2 * I), (D[1] - I) / (1 - 2 * I)],
           V = [z[0] * t, z[1] * C],
           L = KA(z, [0.5, 0.5]),
           K = DB(L),
           a = Math.min(Math.abs(L[0]) + Math.abs(L[1]) * g.cornerSize, 1),
-          D = tA((1 - K * 1.5) * (1 - a * 0.5), 1 - g.vignetteDarkness, 1),
+          U = tA((1 - K * 1.5) * (1 - a * 0.5), 1 - g.vignetteDarkness, 1),
           l = g.rgbShift * 0.01,
           i = L,
           k = 0,
           J = 0,
-          T = 0,
+          P = 0,
           S = [V[0] + i[0] * l * t, V[1] + i[1] * l * C]
         ;(k = n(S)[0]), (J = n(V)[1])
         let XA = [V[0] - i[0] * l * t, V[1] - i[1] * l * C]
-        T = n(XA)[2]
+        P = n(XA)[2]
         let p = 1 - (Math.floor(z[1] * g.scanLineCount) % 2) * g.scanLineStrength,
           W = 1 + dist_jf(s) * g.noiseIntensity,
           fA = 0
@@ -110673,7 +110676,7 @@ Check the top-level render call using <` +
           }
           fA = (rA / gA.length) * g.bloomAmount
         }
-        return [tA(k * D * p * W + fA, 0, 255), tA(J * D * p * W + fA, 0, 255), tA(T * D * p * W + fA, 0, 255), 255]
+        return [tA(k * U * p * W + fA, 0, 255), tA(J * U * p * W + fA, 0, 255), tA(P * U * p * W + fA, 0, 255), 255]
       })
     }
     var LE = [0, 0],
@@ -110683,18 +110686,18 @@ Check the top-level render call using <` +
         let M = [e[0] / B, e[1] / Q],
           n = B - 1,
           t = Q - 1
-        function C(P) {
-          let z = KA(P, [0.5, 0.5]),
+        function C(N) {
+          let z = KA(N, [0.5, 0.5]),
             V = ZA(z, z) * Jf,
             L = (1 + V) * V
-          return (z[0] = z[0] * L), (z[1] = z[1] * L), RE(P, z)
+          return (z[0] = z[0] * L), (z[1] = z[1] * L), RE(N, z)
         }
         let s = C([M[0], M[1]])
         ;(s[0] = s[0] * (LE[0] * 2 + 1) - LE[0]), (s[1] = s[1] * (LE[1] * 2 + 1) - LE[1])
         let F = [M[0] * (1 - M[1]), M[1] * (1 - M[0])],
-          U = Math.pow(UB(F) * 15, 0.25),
+          D = Math.pow(UB(F) * 15, 0.25),
           I = g([s[0] * n, s[1] * t])
-        return [I[0] * U, I[1] * U, I[2] * U, 255]
+        return [I[0] * D, I[1] * D, I[2] * D, 255]
       })
     }
     function XB(E, B, Q, e) {
@@ -110703,32 +110706,32 @@ Check the top-level render call using <` +
         C = M / 2,
         s = t ? 4 : 1,
         F = []
-      for (let U = 0; U < s; U++) for (let I = 0; I < s; I++) F.push([(U + 0.5) * (M / s), (I + 0.5) * (M / s)])
-      return wA(E, B, Q, (U, I) => {
-        let P = Math.floor(U[0] / M),
-          z = Math.floor(U[1] / M),
-          V = P * M,
+      for (let D = 0; D < s; D++) for (let I = 0; I < s; I++) F.push([(D + 0.5) * (M / s), (I + 0.5) * (M / s)])
+      return wA(E, B, Q, (D, I) => {
+        let N = Math.floor(D[0] / M),
+          z = Math.floor(D[1] / M),
+          V = N * M,
           L = z * M
         if (n === 'center') return I([V + C, L + C])
         let K = []
         K.length = F.length
         for (let a = 0; a < F.length; a++) {
-          let [D, l] = F[a]
-          K[a] = I([V + D, L + l])
+          let [U, l] = F[a]
+          K[a] = I([V + U, L + l])
         }
         if (n === 'average') {
           let a = [0, 0, 0, 0]
           for (let l of K) (a[0] += l[0]), (a[1] += l[1]), (a[2] += l[2]), (a[3] += l[3])
-          let D = K.length
-          return [a[0] / D, a[1] / D, a[2] / D, a[3] / D]
+          let U = K.length
+          return [a[0] / U, a[1] / U, a[2] / U, a[3] / U]
         } else {
           let a = new Map(),
-            D = 0,
+            U = 0,
             l = K[0]
           for (let i of K) {
             let k = i.join(','),
               J = a.get(k)
-            J ? (J.count++, J.count > D && ((D = J.count), (l = J.color))) : a.set(k, { color: i, count: 1 })
+            J ? (J.count++, J.count > U && ((U = J.count), (l = J.color))) : a.set(k, { color: i, count: 1 })
           }
           return l
         }
@@ -110769,65 +110772,65 @@ Check the top-level render call using <` +
     }
     function oE(E, B, Q, e = {}) {
       let g = { ...dist_kf, ...e },
-        { radius: M, intensity: n, color: t, layers: C, falloff: s, adaptiveThreshold: F, threshold: U } = g,
-        I = F ? dist_vf(E, B, Q) : U,
-        P = dist_hf(s)
-      function z(D, l, i) {
+        { radius: M, intensity: n, color: t, layers: C, falloff: s, adaptiveThreshold: F, threshold: D } = g,
+        I = F ? dist_vf(E, B, Q) : D,
+        N = dist_hf(s)
+      function z(U, l, i) {
         let k = i * i * 2
         for (let J = 0; J < Q; J++)
-          for (let T = 0; T < B; T++) {
-            let S = (J * B + T) * 4,
+          for (let P = 0; P < B; P++) {
+            let S = (J * B + P) * 4,
               Z = 0,
               CA = 0,
               XA = 0,
               BA = 0
             for (let QA = -i; QA <= i; QA++) {
-              let p = Math.min(Math.max(T + QA, 0), B - 1),
+              let p = Math.min(Math.max(P + QA, 0), B - 1),
                 W = (J * B + p) * 4,
-                fA = D[W],
-                gA = D[W + 1],
-                rA = D[W + 2]
+                fA = U[W],
+                gA = U[W + 1],
+                rA = U[W + 2]
               if ((fA * 0.2126 + gA * 0.7152 + rA * 0.0722) / 255 > I) {
                 let _ = QA * QA,
-                  AA = P(_, k)
+                  AA = N(_, k)
                 ;(Z += fA * AA), (CA += gA * AA), (XA += rA * AA), (BA += AA)
               }
             }
             BA > 0
               ? ((l[S] = Z / BA), (l[S + 1] = CA / BA), (l[S + 2] = XA / BA), (l[S + 3] = 255))
-              : ((l[S] = D[S]), (l[S + 1] = D[S + 1]), (l[S + 2] = D[S + 2]), (l[S + 3] = D[S + 3]))
+              : ((l[S] = U[S]), (l[S + 1] = U[S + 1]), (l[S + 2] = U[S + 2]), (l[S + 3] = U[S + 3]))
           }
       }
-      function V(D, l, i) {
+      function V(U, l, i) {
         let k = i * i * 2
         for (let J = 0; J < B; J++)
-          for (let T = 0; T < Q; T++) {
-            let S = (T * B + J) * 4,
+          for (let P = 0; P < Q; P++) {
+            let S = (P * B + J) * 4,
               Z = 0,
               CA = 0,
               XA = 0,
               BA = 0
             for (let QA = -i; QA <= i; QA++) {
-              let W = (Math.min(Math.max(T + QA, 0), Q - 1) * B + J) * 4,
-                fA = D[W],
-                gA = D[W + 1],
-                rA = D[W + 2]
+              let W = (Math.min(Math.max(P + QA, 0), Q - 1) * B + J) * 4,
+                fA = U[W],
+                gA = U[W + 1],
+                rA = U[W + 2]
               if ((fA * 0.2126 + gA * 0.7152 + rA * 0.0722) / 255 > I) {
                 let _ = QA * QA,
-                  AA = P(_, k)
+                  AA = N(_, k)
                 ;(Z += fA * AA), (CA += gA * AA), (XA += rA * AA), (BA += AA)
               }
             }
             BA > 0
               ? ((l[S] = Z / BA), (l[S + 1] = CA / BA), (l[S + 2] = XA / BA), (l[S + 3] = 255))
-              : ((l[S] = D[S]), (l[S + 1] = D[S + 1]), (l[S + 2] = D[S + 2]), (l[S + 3] = D[S + 3]))
+              : ((l[S] = U[S]), (l[S + 1] = U[S + 1]), (l[S + 2] = U[S + 2]), (l[S + 3] = U[S + 3]))
           }
       }
       let L = B * Q,
         K = new Float32Array(L * 4),
         a = []
-      for (let D = 0; D < C; D++) {
-        let l = Math.floor(M * (D + 1)),
+      for (let U = 0; U < C; U++) {
+        let l = Math.floor(M * (U + 1)),
           i = new Float32Array(L * 4)
         z(E, K, l), V(K, i, l), a.push(i)
       }
@@ -110835,15 +110838,15 @@ Check the top-level render call using <` +
         E,
         B,
         Q,
-        (D, l) => {
-          let i = l(D),
+        (U, l) => {
+          let i = l(U),
             k = [i[0], i[1], i[2]]
           for (let J = 0; J < C; J++) {
-            let T = n / (J + 1),
+            let P = n / (J + 1),
               S = a[J],
-              Z = [S[HA(D[0], D[1], B) * 4], S[HA(D[0], D[1], B) * 4 + 1], S[HA(D[0], D[1], B) * 4 + 2]],
+              Z = [S[HA(U[0], U[1], B) * 4], S[HA(U[0], U[1], B) * 4 + 1], S[HA(U[0], U[1], B) * 4 + 2]],
               CA = MQ(Z, t)
-            k = gQ(k, CA, T)
+            k = gQ(k, CA, P)
           }
           return [k[0], k[1], k[2], 255]
         },
@@ -110867,17 +110870,17 @@ Check the top-level render call using <` +
       let { avatar: Q, commits: e, contributions: g, issues: M, name: n, prs: t, rank: C, stars: s } = E,
         {
           hiddenStatsKeys: F,
-          includeAllCommits: U,
+          includeAllCommits: D,
           color: I,
-          background: P,
+          background: N,
           backgroundRepeat: z,
           backgroundSize: V,
           backgroundImage: L
         } = B,
         a = new Date().getFullYear(),
-        D = (k) => !F.includes(k),
+        U = (k) => !F.includes(k),
         l = bE(F),
-        i = D('rank') && l > 0
+        i = U('rank') && l > 0
       return (0, b.jsx)('div', {
         style: {
           display: 'flex',
@@ -110885,7 +110888,7 @@ Check the top-level render call using <` +
           width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          ...PA({ color: I, background: P, backgroundRepeat: z, backgroundSize: V, backgroundImage: L })
+          ...PA({ color: I, background: N, backgroundRepeat: z, backgroundSize: V, backgroundImage: L })
         },
         children: (0, b.jsxs)('div', {
           style: {
@@ -110928,7 +110931,7 @@ Check the top-level render call using <` +
                     paddingRight: Q ? 40 : 0
                   },
                   children: [
-                    D('stars') &&
+                    U('stars') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -110942,7 +110945,7 @@ Check the top-level render call using <` +
                           (0, b.jsx)('div', { children: s })
                         ]
                       }),
-                    D('commits') &&
+                    U('commits') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -110952,11 +110955,11 @@ Check the top-level render call using <` +
                           width: '100%'
                         },
                         children: [
-                          (0, b.jsx)('div', { children: `Total Commits${U ? '' : `(${a})`}:` }),
+                          (0, b.jsx)('div', { children: `Total Commits${D ? '' : `(${a})`}:` }),
                           (0, b.jsx)('div', { children: e })
                         ]
                       }),
-                    D('prs') &&
+                    U('prs') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -110967,7 +110970,7 @@ Check the top-level render call using <` +
                         },
                         children: [(0, b.jsx)('div', { children: 'Total PRs:' }), (0, b.jsx)('div', { children: t })]
                       }),
-                    D('issues') &&
+                    U('issues') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -110978,7 +110981,7 @@ Check the top-level render call using <` +
                         },
                         children: [(0, b.jsx)('div', { children: 'Total Issues:' }), (0, b.jsx)('div', { children: M })]
                       }),
-                    D('contributions') &&
+                    U('contributions') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111004,7 +111007,7 @@ Check the top-level render call using <` +
                         },
                         children: (0, b.jsx)('div', { children: '--------------------------------' })
                       }),
-                    D('rank') &&
+                    U('rank') &&
                       (0, b.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111017,7 +111020,7 @@ Check the top-level render call using <` +
                       })
                   ]
                 }),
-                D('avatar') && (0, b.jsx)('img', { src: Q, alt: 'Avatar', style: { height: '100%' } })
+                U('avatar') && (0, b.jsx)('img', { src: Q, alt: 'Avatar', style: { height: '100%' } })
               ]
             })
           ]
@@ -111120,8 +111123,8 @@ Check the top-level render call using <` +
         C = KE(M),
         s = ZE(E, ''),
         F = { ...yA, ...C, ...PA({}), hiddenStatsKeys: g, includeAllCommits: e },
-        { pixels: U } = await yE(NB(s, F), n, t, () => NB({ ...s, name: Q }, F)),
-        I = U
+        { pixels: D } = await yE(NB(s, F), n, t, () => NB({ ...s, name: Q }, F)),
+        I = D
       return (
         (I = CE(I, n, t, {
           curvatureX: 0.045,
@@ -111437,10 +111440,10 @@ Check the top-level render call using <` +
         s = (B[2] - t) / (C - t),
         F = n < e ? [...g] : [...M]
       F[2] = s < e ? t : C
-      let U = ZQ(Math.max(B[1] - 0.125, 0)),
+      let D = ZQ(Math.max(B[1] - 0.125, 0)),
         I = ZQ(Math.min(B[1] + 0.124, 1)),
-        P = (B[1] - U) / (I - U)
-      return (F[1] = P < e ? U : I), sB(F)
+        N = (B[1] - D) / (I - D)
+      return (F[1] = N < e ? D : I), sB(F)
     }
     function OQ(E, B, Q) {
       return wA(
@@ -111468,17 +111471,17 @@ Check the top-level render call using <` +
       let { avatar: Q, commits: e, contributions: g, issues: M, name: n, prs: t, rank: C, stars: s } = E,
         {
           hiddenStatsKeys: F,
-          includeAllCommits: U,
+          includeAllCommits: D,
           color: I,
-          background: P,
+          background: N,
           backgroundRepeat: z,
           backgroundSize: V,
           backgroundImage: L
         } = B,
         a = new Date().getFullYear(),
-        D = (k) => !F.includes(k),
+        U = (k) => !F.includes(k),
         l = bE(F),
-        i = D('rank') && l > 0
+        i = U('rank') && l > 0
       return (0, h.jsx)('div', {
         style: {
           display: 'flex',
@@ -111486,7 +111489,7 @@ Check the top-level render call using <` +
           width: '100%',
           alignItems: 'center',
           justifyContent: 'center',
-          ...PA({ color: I, background: P, backgroundRepeat: z, backgroundSize: V, backgroundImage: L })
+          ...PA({ color: I, background: N, backgroundRepeat: z, backgroundSize: V, backgroundImage: L })
         },
         children: (0, h.jsxs)('div', {
           style: {
@@ -111529,7 +111532,7 @@ Check the top-level render call using <` +
                     paddingRight: Q ? 40 : 0
                   },
                   children: [
-                    D('stars') &&
+                    U('stars') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111543,7 +111546,7 @@ Check the top-level render call using <` +
                           (0, h.jsx)('div', { children: s })
                         ]
                       }),
-                    D('commits') &&
+                    U('commits') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111553,11 +111556,11 @@ Check the top-level render call using <` +
                           width: '100%'
                         },
                         children: [
-                          (0, h.jsx)('div', { children: `Total Commits${U ? '' : `(${a})`}:` }),
+                          (0, h.jsx)('div', { children: `Total Commits${D ? '' : `(${a})`}:` }),
                           (0, h.jsx)('div', { children: e })
                         ]
                       }),
-                    D('prs') &&
+                    U('prs') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111568,7 +111571,7 @@ Check the top-level render call using <` +
                         },
                         children: [(0, h.jsx)('div', { children: 'Total PRs:' }), (0, h.jsx)('div', { children: t })]
                       }),
-                    D('issues') &&
+                    U('issues') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111579,7 +111582,7 @@ Check the top-level render call using <` +
                         },
                         children: [(0, h.jsx)('div', { children: 'Total Issues:' }), (0, h.jsx)('div', { children: M })]
                       }),
-                    D('contributions') &&
+                    U('contributions') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111607,7 +111610,7 @@ Check the top-level render call using <` +
                           ? (0, h.jsx)('div', { children: '--------------------------------' })
                           : (0, h.jsx)('div', { children: '---------------------------------------------' })
                       }),
-                    D('rank') &&
+                    U('rank') &&
                       (0, h.jsxs)('div', {
                         style: {
                           display: 'flex',
@@ -111620,7 +111623,7 @@ Check the top-level render call using <` +
                       })
                   ]
                 }),
-                D('avatar') && (0, h.jsx)('img', { src: Q, alt: 'Avatar', style: { height: '100%' } })
+                U('avatar') && (0, h.jsx)('img', { src: Q, alt: 'Avatar', style: { height: '100%' } })
               ]
             })
           ]
@@ -111638,33 +111641,33 @@ Check the top-level render call using <` +
           includeAllCommits: C = !1,
           pixelateAvatar: s = !0,
           screenEffect: F = !1,
-          isFastMode: U = !0,
+          isFastMode: D = !0,
           avatarBorder: I,
-          theme: P = '',
+          theme: N = '',
           dithering: z = !1
         } = B,
-        V = I !== void 0 ? I : P !== ''
+        V = I !== void 0 ? I : N !== ''
       t.includes('avatar') && (g = '')
-      let L = KE(P),
+      let L = KE(N),
         K = t.includes('rank') ? qQ.SMALL : qQ.BIG,
         a = K.CARD_WIDTH,
-        D = K.CARD_HEIGHT,
-        l = await dist_Ir(g, s, V, U),
+        U = K.CARD_HEIGHT,
+        l = await dist_Ir(g, s, V, D),
         i = ZE(E, l),
         k = { ...yA, ...L, ...PA({ color: n, background: M }), hiddenStatsKeys: t, includeAllCommits: C },
-        { pixels: J } = await yE(jB(i, k), a, D, () => jB({ ...i, name: Q }, k)),
-        T = J
+        { pixels: J } = await yE(jB(i, k), a, U, () => jB({ ...i, name: Q }, k)),
+        P = J
       return (
-        P === 'crt'
-          ? ((T = CE(T, a, D)),
-            (T = oE(T, a, D, { radius: 5, intensity: 0.17, color: [1, 1, 1], layers: 5, falloff: 'exponential' })))
-          : (z && (T = OQ(T, a, D)),
+        N === 'crt'
+          ? ((P = CE(P, a, U)),
+            (P = oE(P, a, U, { radius: 5, intensity: 0.17, color: [1, 1, 1], layers: 5, falloff: 'exponential' })))
+          : (z && (P = OQ(P, a, U)),
             F &&
-              (z || (T = WQ(T, a, D)),
-              U ||
-                (T = oE(T, a, D, { radius: 3, intensity: 0.3, color: [1, 1, 1], layers: 2, falloff: 'exponential' })),
-              (T = cB(T, a, D)))),
-        await nE(T, a, D)
+              (z || (P = WQ(P, a, U)),
+              D ||
+                (P = oE(P, a, U, { radius: 3, intensity: 0.3, color: [1, 1, 1], layers: 2, falloff: 'exponential' })),
+              (P = cB(P, a, U)))),
+        await nE(P, a, U)
       )
     }
     var sr = 4
